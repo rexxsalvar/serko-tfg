@@ -6,6 +6,38 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Sora', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:root {
+    --serko-ink: #0f172a;
+    --serko-primary: #d62828;
+    --serko-primary-dark: #9d0208;
+    --serko-gold: #fcbf49;
+}
+
+body {
+    background:
+        radial-gradient(circle at top left, rgb(252 191 73 / 0.18), transparent 26rem),
+        radial-gradient(circle at top right, rgb(214 40 40 / 0.18), transparent 24rem),
+        linear-gradient(180deg, #fffaf2 0%, #f4efe5 100%);
+    color: var(--serko-ink);
+}
+
+.serko-card {
+    @apply rounded-3xl border border-white/70 bg-white/80 shadow-xl shadow-slate-900/8 backdrop-blur;
+}
+
+.serko-button {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5;
+    background: linear-gradient(135deg, var(--serko-primary), var(--serko-primary-dark));
+}
+
+.serko-button-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-3 font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-white;
+}
+
+.serko-section-title {
+    @apply text-3xl font-bold tracking-tight text-slate-950 md:text-4xl;
 }

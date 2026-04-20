@@ -1,0 +1,16 @@
+<?php
+
+return [
+    'brand_tagline' => 'Football tickets with fast checkout and professional operations.',
+    'nav' => ['events' => 'Events', 'stadiums' => 'Stadiums', 'dashboard' => 'My tickets', 'admin' => 'Admin', 'login' => 'Login', 'register' => 'Register', 'logout' => 'Logout'],
+    'hero' => ['badge' => 'Premium ticketing', 'title' => 'Buy football tickets with the energy of matchday before you reach the stadium.', 'description' => 'SERKO connects fans, clubs and venues in a modern, fast and secure selling experience.', 'cta_primary' => 'Browse matches', 'cta_secondary' => 'View stadiums', 'card_label' => 'Matchday radar'],
+    'stats' => ['events' => 'Available events', 'stadiums' => 'Active stadiums'],
+    'dashboard' => ['title' => 'Your tickets', 'subtitle' => 'Access your QR codes and review upcoming matches.', 'ticket' => 'Ticket', 'empty' => 'You have not bought tickets yet.'],
+    'events' => ['title' => 'Featured events', 'subtitle' => 'Find live football and choose your seat.', 'search' => 'Search team or stadium...', 'view' => 'View details', 'date' => 'Date', 'stadium' => 'Stadium', 'available' => 'Available seats', 'buy_box_title' => 'Buy in minutes', 'buy_box_description' => 'Pick your seats and pay with PayPal.', 'buy_now' => 'Go to checkout', 'login_to_buy' => 'Login to buy', 'description' => 'Description', 'competition' => 'Competition', 'created' => 'Event created successfully.', 'updated' => 'Event updated successfully.', 'deleted' => 'Event deleted successfully.'],
+    'stadiums' => ['title' => 'Stadiums', 'subtitle' => 'Explore venues and their layouts.', 'view' => 'View stadium', 'seats' => 'seats', 'sectors_title' => 'Sectors', 'upcoming_events' => 'Upcoming events', 'name' => 'Name', 'city' => 'City', 'capacity' => 'Capacity', 'created' => 'Stadium created successfully.', 'updated' => 'Stadium updated successfully.', 'deleted' => 'Stadium deleted successfully.'],
+    'orders' => ['checkout_title' => 'Checkout', 'payment_title' => 'PayPal payment', 'payment_help' => 'Complete PayPal first and SERKO will validate seat availability before issuing tickets.', 'selected' => 'Selected', 'total' => 'Total', 'complete' => 'Complete purchase', 'completed' => 'Purchase completed', 'summary' => 'Your order has been registered with a total of :total EUR.', 'order' => 'Order'],
+    'auth' => ['login' => 'Login', 'register' => 'Register', 'name' => 'Name', 'email' => 'Email', 'password' => 'Password', 'password_confirmation' => 'Confirm password', 'remember' => 'Remember me'],
+    'admin' => ['events_title' => 'Event management', 'events_subtitle' => 'Control schedule, prices and availability.', 'new_event' => 'New event', 'edit_event' => 'Edit event', 'stadiums_title' => 'Stadium management', 'stadiums_subtitle' => 'Update venues and images.', 'new_stadium' => 'New stadium', 'edit_stadium' => 'Edit stadium', 'save' => 'Save changes', 'drag_drop' => 'Drag an image here or click to upload'],
+    'mail' => ['purchase_subject' => 'SERKO purchase confirmation #:order', 'reminder_subject' => 'SERKO event reminder', 'purchase_heading' => 'Purchase confirmed', 'purchase_intro' => 'Your order #:order is confirmed.', 'reminder_heading' => 'Your match starts soon'],
+    'validation' => ['seat_unavailable' => 'One or more seats are no longer available.'],
+];
