@@ -74,4 +74,16 @@ class Event extends Model
     {
         return $query->whereHas('seats', fn (Builder $builder) => $builder->where('event_seat.status', 'available'));
     }
+
+    public function scopeBetweenDates(Builder $query, mixed $from, mixed $to): Builder
+    {
+        return $query->whereBetween('date', [$from, $to])->orderBy('date');
+    }
+
+    public function scopeHighDemand(Builder $query, int $minimumSoldSeats = 10): Builder
+    {
+        return $query
+            ->whereHas('seats', fn (Builder $builder) => $builder->where('event_seat.status', 'sold'), '>=', $minimumSoldSeats)
+            ->withCount(['seats as sold_seats_count' => fn (Builder $builder) => $builder->where('event_seat.status', 'sold')]);
+    }
 }

@@ -25,14 +25,13 @@
                 </div>
                 <div>
                     <x-label value="Image" />
-                    <input type="hidden" name="image" id="stadium-image" value="{{ old('image', $stadium->image) }}">
-                    <div data-dropzone data-target="#stadium-image" data-endpoint="{{ route('admin.media.store') }}" class="dropzone rounded-3xl border-2 border-dashed border-slate-300 bg-slate-50 p-6 text-sm text-slate-500">
+                    <x-file-upload name="image" target="#stadium-image" :endpoint="route('admin.media.store')" :value="$stadium->image">
                         {{ __('serko.admin.drag_drop') }}
-                    </div>
+                    </x-file-upload>
                 </div>
             </div>
 
-            <button type="submit" class="serko-button">{{ __('serko.admin.save') }}</button>
+            <x-button type="submit">{{ __('serko.admin.save') }}</x-button>
         </form>
     </section>
 @endsection

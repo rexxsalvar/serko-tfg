@@ -15,18 +15,29 @@
     --serko-primary: #d62828;
     --serko-primary-dark: #9d0208;
     --serko-gold: #fcbf49;
+    --serko-night: #111827;
 }
 
 body {
     background:
         radial-gradient(circle at top left, rgb(252 191 73 / 0.18), transparent 26rem),
         radial-gradient(circle at top right, rgb(214 40 40 / 0.18), transparent 24rem),
-        linear-gradient(180deg, #fffaf2 0%, #f4efe5 100%);
+        linear-gradient(180deg, #fffaf2 0%, #f4efe5 54%, #efe6d7 100%);
     color: var(--serko-ink);
+}
+
+.serko-shell {
+    background:
+        linear-gradient(135deg, rgb(255 255 255 / 0.88), rgb(255 255 255 / 0.58)),
+        radial-gradient(circle at 20% 20%, rgb(252 191 73 / 0.20), transparent 22rem);
 }
 
 .serko-card {
     @apply rounded-3xl border border-white/70 bg-white/80 shadow-xl shadow-slate-900/8 backdrop-blur;
+}
+
+.serko-card-dark {
+    @apply rounded-3xl border border-white/10 bg-slate-950 text-white shadow-2xl shadow-red-950/20;
 }
 
 .serko-button {
@@ -40,4 +51,40 @@ body {
 
 .serko-section-title {
     @apply text-3xl font-bold tracking-tight text-slate-950 md:text-4xl;
+}
+
+.serko-kicker {
+    @apply text-xs font-black uppercase tracking-[0.28em] text-red-700;
+}
+
+.serko-pill {
+    @apply inline-flex items-center rounded-full border border-red-100 bg-red-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-red-700;
+}
+
+.serko-nav-link {
+    @apply rounded-full px-3 py-2 transition hover:bg-slate-950 hover:text-white;
+}
+
+.serko-metric {
+    @apply rounded-3xl border border-white/70 bg-white/70 p-5 shadow-lg shadow-slate-900/5;
+}
+
+.serko-reveal {
+    animation: serko-reveal 0.55s ease both;
+}
+
+.serko-seat-stage {
+    @apply rounded-3xl border border-amber-200 bg-gradient-to-r from-amber-50 via-white to-red-50 px-5 py-4 text-center text-xs font-black uppercase tracking-[0.35em] text-slate-500;
+}
+
+@keyframes serko-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.99);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }

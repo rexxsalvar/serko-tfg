@@ -25,7 +25,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'string', 'confirmed', 'min:8'],
         ]);
 
-        $user = User::query()->create($validated);
+        $user = User::query()->create([...$validated, 'role' => 'User']);
         $user->assignRole('User');
 
         event(new Registered($user));

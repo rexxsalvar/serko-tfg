@@ -19,16 +19,16 @@ class EventPolicy
 
     public function create(User $user): bool
     {
-        return $user->hasRole('Admin');
+        return $user->isAdmin();
     }
 
     public function update(User $user, Event $event): bool
     {
-        return $user->hasRole('Admin');
+        return $user->isAdmin();
     }
 
     public function delete(User $user, Event $event): bool
     {
-        return $user->hasRole('Admin');
+        return $user->isAdmin();
     }
 }

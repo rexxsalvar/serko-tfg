@@ -10,7 +10,13 @@ class PdfGeneratorService
 {
     public function generateForOrder(Order $order, string $type): string
     {
-        $view = $type === 'invoice' ? 'pdfs.invoice' : 'pdfs.ticket';
+        $view = match ($type) {
+            'invoice' => 'pdfs.invoice',
+            'receipt' => 'pdfs.receipt',
+            'event-report' => 'pdfs.event-report',
+            'sales-summary' => 'pdfs.sales-summary',
+            default => 'pdfs.ticket',
+        };
         $path = "pdf/{$type}-order-{$order->id}.pdf";
 
         Storage::disk('public')->put($path, Pdf::loadView($view, ['order' => $order])->output());

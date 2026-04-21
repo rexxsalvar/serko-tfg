@@ -42,4 +42,9 @@ class Stadium extends Model
     {
         return $query->whereHas('events', fn (Builder $builder) => $builder->upcomingEvents());
     }
+
+    public function scopeLargeCapacity(Builder $query, int $minimumCapacity = 50000): Builder
+    {
+        return $query->where('capacity', '>=', $minimumCapacity)->orderByDesc('capacity');
+    }
 }

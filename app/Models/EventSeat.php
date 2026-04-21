@@ -8,6 +8,10 @@ class EventSeat extends Pivot
 {
     protected $table = 'event_seat';
 
+    public $incrementing = true;
+
+    public $timestamps = true;
+
     protected $fillable = [
         'event_id',
         'seat_id',

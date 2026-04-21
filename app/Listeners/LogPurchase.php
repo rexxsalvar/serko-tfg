@@ -3,15 +3,12 @@
 namespace App\Listeners;
 
 use App\Events\TicketPurchased;
-use App\Services\TelegramNotifier;
+use App\Jobs\SendTelegramNotificationJob;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Log;
 
 class LogPurchase
 {
-    public function __construct(private readonly TelegramNotifier $telegramNotifier)
-    {
-    }
-
     public function handle(TicketPurchased $event): void
     {
         $message = sprintf(
@@ -22,6 +19,7 @@ class LogPurchase
         );
 
         Log::info($message, ['order_id' => $event->order->id]);
-        $this->telegramNotifier->send($message);
+        SendTelegramNotificationJob::dispatch($message);
+        Artisan::call('serko:record-purchase-metric', ['order' => $event->order->id]);
     }
 }

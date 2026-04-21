@@ -2,13 +2,18 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Event;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreEventRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        return $this->user()?->can('create', \App\Models\Event::class) ?? false;
+        $event = $this->route('event');
+
+        return $event instanceof Event
+            ? ($this->user()?->can('update', $event) ?? false)
+            : ($this->user()?->can('create', Event::class) ?? false);
     }
 
     public function rules(): array

@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     protected $hidden = [
@@ -46,5 +47,15 @@ class User extends Authenticatable
     public function tickets(): HasManyThrough
     {
         return $this->hasManyThrough(Ticket::class, Order::class);
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'Admin' || $this->hasRole('Admin');
+    }
+
+    public function isBackoffice(): bool
+    {
+        return $this->isAdmin() || $this->hasAnyRole(['Manager', 'Support', 'Auditor']);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Events\PaymentCaptured;
 use App\Events\TicketPurchased;
 use App\Models\Event;
 use App\Models\Order;
@@ -14,9 +15,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class CheckoutService
 {
-    public function __construct(private readonly PayPalService $payPalService)
-    {
-    }
+    public function __construct(private readonly PayPalService $payPalService) {}
 
     public function purchase(User $user, Event $event, array $seatIds, string $paypalOrderId): Order
     {
@@ -44,12 +43,14 @@ class CheckoutService
                 'status' => 'paid',
             ]);
 
-            Payment::query()->create([
+            $payment = Payment::query()->create([
                 'order_id' => $order->id,
                 'method' => 'paypal',
-                'status' => data_get($capture, 'status', 'completed'),
+                'status' => strtolower(data_get($capture, 'status', 'completed')),
                 'transaction_id' => data_get($capture, 'id', $paypalOrderId),
             ]);
+
+            event(new PaymentCaptured($payment));
 
             foreach ($selectedSeats as $seat) {
                 $price = $seatPricing[$seat->id]->pivot->price;
@@ -57,7 +58,7 @@ class CheckoutService
                 $order->tickets()->create([
                     'event_id' => $event->id,
                     'seat_id' => $seat->id,
-                    'qr_code' => base64_encode(QrCode::format('png')->size(220)->generate(Str::uuid()->toString())),
+                    'qr_code' => base64_encode(QrCode::format('svg')->size(220)->generate(Str::uuid()->toString())),
                     'price' => $price,
                 ]);
 

@@ -14,6 +14,6 @@ class TicketPolicy
 
     public function view(User $user, Ticket $ticket): bool
     {
-        return $user->hasRole('Admin') || $ticket->order->user_id === $user->id;
+        return $user->isAdmin() || $ticket->order->user_id === $user->id;
     }
 }

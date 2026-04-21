@@ -15,7 +15,7 @@
                         <h2 class="text-2xl font-bold">{{ $ticket->event->homeTeam->name }} vs {{ $ticket->event->awayTeam->name }}</h2>
                         <p class="mt-2 text-sm text-slate-600">{{ $ticket->seat->row }}-{{ $ticket->seat->number }} - {{ number_format($ticket->price, 2) }} EUR</p>
                     </div>
-                    <img src="data:image/png;base64,{{ $ticket->qr_code }}" alt="QR" class="h-28 w-28 rounded-2xl bg-white p-2 shadow">
+                    <img src="data:image/svg+xml;base64,{{ $ticket->qr_code }}" alt="QR" class="h-28 w-28 rounded-2xl bg-white p-2 shadow">
                 </article>
             @endforeach
         </div>

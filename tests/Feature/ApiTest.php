@@ -23,6 +23,22 @@ it('lists public events through the api', function (): void {
         ->assertJsonStructure(['data']);
 });
 
+it('issues api tokens for valid credentials', function (): void {
+    $user = User::factory()->create([
+        'email' => 'api@serko.test',
+        'role' => 'Admin',
+    ]);
+    $user->assignRole('Admin');
+
+    $this->postJson('/api/tokens', [
+        'email' => 'api@serko.test',
+        'password' => 'password',
+        'device_name' => 'pest',
+    ])
+        ->assertCreated()
+        ->assertJsonStructure(['data' => ['token', 'user' => ['id', 'name', 'email', 'role']]]);
+});
+
 it('allows an admin to create an event through the api', function (): void {
     $admin = User::factory()->create();
     $admin->assignRole('Admin');

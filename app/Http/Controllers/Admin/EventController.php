@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Events\EventCreated;
+use App\Events\SeatReserved;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreEventRequest;
 use App\Models\Competition;
@@ -24,7 +25,7 @@ class EventController extends Controller
 
     public function create(): View
     {
-        return view('admin.events.form', $this->formData(new Event()));
+        return view('admin.events.form', $this->formData(new Event));
     }
 
     public function store(StoreEventRequest $request): RedirectResponse
@@ -74,7 +75,13 @@ class EventController extends Controller
             'stadiums' => Stadium::query()->orderBy('name')->get(),
             'competitions' => Competition::query()->orderBy('name')->get(),
             'teams' => Team::query()->orderBy('name')->get(),
-            'seatCatalogue' => Seat::query()->with('sector.stadium')->get()->groupBy(fn (Seat $seat) => $seat->sector->stadium->name),
+            'seatCatalogue' => Seat::query()
+                ->with('sector.stadium')
+                ->orderBy('sector_id')
+                ->orderBy('row')
+                ->orderBy('number')
+                ->get()
+                ->groupBy(fn (Seat $seat) => $seat->sector->stadium_id),
         ];
     }
 
@@ -84,13 +91,32 @@ class EventController extends Controller
             return;
         }
 
-        $payload = collect($seats)->mapWithKeys(fn (array $seat) => [
-            $seat['seat_id'] => [
-                'price' => $seat['price'],
-                'status' => $seat['status'] ?? 'available',
-            ],
-        ])->all();
+        $validSeatIds = Seat::query()
+            ->whereHas('sector', fn ($query) => $query->where('stadium_id', $event->stadium_id))
+            ->pluck('id')
+            ->all();
+
+        $payload = collect($seats)
+            ->filter(fn (array $seat) => in_array((int) $seat['seat_id'], $validSeatIds, true))
+            ->mapWithKeys(fn (array $seat) => [
+                $seat['seat_id'] => [
+                    'price' => $seat['price'],
+                    'status' => $seat['status'] ?? 'available',
+                ],
+            ])
+            ->all();
 
         $event->seats()->sync($payload);
+
+        collect($seats)
+            ->filter(fn (array $seat) => ($seat['status'] ?? 'available') === 'reserved')
+            ->pluck('seat_id')
+            ->each(function (int|string $seatId) use ($event): void {
+                $seat = Seat::query()->find((int) $seatId);
+
+                if ($seat) {
+                    event(new SeatReserved($event, $seat));
+                }
+            });
     }
 }

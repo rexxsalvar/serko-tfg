@@ -1,58 +1,66 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# SERKO
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+SERKO es una plataforma Laravel para venta y gestion de entradas deportivas. Incluye zona publica, checkout con selector de asientos, tickets con QR, panel admin, reportes Excel, API REST con Sanctum y datos demo.
 
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## Arranque rapido
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+composer install
+npm install
+copy .env.example .env
+php artisan key:generate
+php artisan storage:link
+php artisan migrate:fresh --seed
+npm run build
+php artisan serve --host=127.0.0.1 --port=8080
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+En Windows con Herd, si `php artisan serve` falla, usa la ruta completa:
 
-## Contributing
+```powershell
+& 'C:\Users\locur\.config\herd\bin\php84\php.exe' artisan serve --host=127.0.0.1 --port=8080
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Abre `http://localhost:8080`.
 
-## Code of Conduct
+## Credenciales demo
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Admin: `admin@serko.test`
+- Usuario: `user@serko.test`
+- Password: `password`
 
-## Security Vulnerabilities
+## Funcionalidades principales
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Home premium con eventos destacados y estadisticas.
+- Listado y detalle de eventos y estadios.
+- Registro, login, logout y roles `Admin` / `User`.
+- Checkout protegido con seleccion visual de asientos.
+- Validacion de disponibilidad real por evento y transaccion de compra.
+- Pedido, pago PayPal mock/realista, tickets con QR y confirmacion.
+- Dashboard de usuario, historial de pedidos y tickets.
+- Admin CRUD de eventos y estadios, subida de imagen y editor enriquecido.
+- Reportes Excel de ventas y eventos.
+- API REST con recursos JSON y tokens Sanctum.
+- Traducciones ES/EN con selector en la navegacion.
 
-## License
+## API
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+La documentacion de endpoints esta en `docs/api.md`.
+
+Para obtener token:
+
+```bash
+curl -X POST http://localhost:8080/api/tokens ^
+  -H "Accept: application/json" ^
+  -H "Content-Type: application/json" ^
+  -d "{\"email\":\"admin@serko.test\",\"password\":\"password\",\"device_name\":\"demo\"}"
+```
+
+## Calidad
+
+```bash
+php artisan test
+npm run build
+```
+
+El checkout usa transacciones y valida que los asientos sigan disponibles antes de emitir tickets.

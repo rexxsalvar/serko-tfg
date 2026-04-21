@@ -2,13 +2,18 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Stadium;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreStadiumRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        return $this->user()?->hasRole('Admin') ?? false;
+        $stadium = $this->route('stadium');
+
+        return $stadium instanceof Stadium
+            ? ($this->user()?->can('update', $stadium) ?? false)
+            : ($this->user()?->can('create', Stadium::class) ?? false);
     }
 
     public function rules(): array

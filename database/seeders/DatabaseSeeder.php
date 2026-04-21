@@ -17,16 +17,31 @@ class DatabaseSeeder extends Seeder
             EventSeeder::class,
         ]);
 
-        $admin = User::factory()->create([
+        $admin = User::query()->updateOrCreate(['email' => 'admin@serko.test'], [
             'name' => 'SERKO Admin',
-            'email' => 'admin@serko.test',
+            'password' => 'password',
+            'role' => 'Admin',
         ]);
-        $admin->assignRole('Admin');
+        $admin->syncRoles(['Admin']);
 
-        $user = User::factory()->create([
+        $user = User::query()->updateOrCreate(['email' => 'user@serko.test'], [
             'name' => 'SERKO User',
-            'email' => 'user@serko.test',
+            'password' => 'password',
+            'role' => 'User',
         ]);
-        $user->assignRole('User');
+        $user->syncRoles(['User']);
+
+        foreach ([
+            ['name' => 'SERKO Manager', 'email' => 'manager@serko.test', 'role' => 'Manager'],
+            ['name' => 'SERKO Support', 'email' => 'support@serko.test', 'role' => 'Support'],
+            ['name' => 'SERKO Auditor', 'email' => 'auditor@serko.test', 'role' => 'Auditor'],
+        ] as $demoUser) {
+            $account = User::query()->updateOrCreate(['email' => $demoUser['email']], [
+                'name' => $demoUser['name'],
+                'password' => 'password',
+                'role' => $demoUser['role'],
+            ]);
+            $account->syncRoles([$demoUser['role']]);
+        }
     }
 }

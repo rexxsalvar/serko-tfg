@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Database\Factories\TeamFactory;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -25,5 +26,10 @@ class Team extends Model
     public function awayEvents(): HasMany
     {
         return $this->hasMany(Event::class, 'away_team_id');
+    }
+
+    public function scopeSearchName(Builder $query, ?string $search): Builder
+    {
+        return $query->when($search, fn (Builder $builder) => $builder->where('name', 'like', "%{$search}%"));
     }
 }

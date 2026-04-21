@@ -6,9 +6,11 @@ use Illuminate\Http\RedirectResponse;
 
 class LocaleController extends Controller
 {
+    public const SUPPORTED = ['es', 'en', 'ca', 'fr', 'de'];
+
     public function switch(string $locale): RedirectResponse
     {
-        abort_unless(in_array($locale, ['es', 'en'], true), 404);
+        abort_unless(in_array($locale, self::SUPPORTED, true), 404);
 
         session(['locale' => $locale]);
 

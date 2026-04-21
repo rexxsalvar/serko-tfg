@@ -1,9 +1,9 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "serko/ticketing",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "SERKO football ticketing platform built with Laravel, Livewire and Tailwind.",
+    "keywords": ["laravel", "ticketing", "football", "livewire"],
     "license": "MIT",
     "require": {
         "php": "^8.3",

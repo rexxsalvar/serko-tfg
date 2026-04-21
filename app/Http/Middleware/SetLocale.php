@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Controllers\LocaleController;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -17,7 +18,7 @@ class SetLocale
             $locale = $request->session()->get('locale', $locale);
         }
 
-        if (! in_array($locale, ['es', 'en'], true)) {
+        if (! in_array($locale, LocaleController::SUPPORTED, true)) {
             $locale = config('app.fallback_locale');
         }
 

@@ -21,6 +21,7 @@ it('registers a new user and assigns the user role', function (): void {
     $user = User::query()->where('email', 'nuevo@serko.test')->first();
 
     expect($user)->not->toBeNull()
+        ->and($user->role)->toBe('User')
         ->and($user->hasRole('User'))->toBeTrue();
 });
 
