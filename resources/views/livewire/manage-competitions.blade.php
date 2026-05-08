@@ -6,8 +6,8 @@
 
     <div class="grid gap-3">
         @foreach ($competitions as $competition)
-            <article class="flex items-center justify-between rounded-2xl bg-white px-4 py-3">
-                <span class="font-bold">{{ $competition->name }}</span>
+            <article class="flex items-center justify-between rounded-2xl border border-white/10 bg-black/25 px-4 py-3">
+                <span class="font-bold text-white">{{ $competition->name }}</span>
                 <div class="flex gap-2">
                     <button wire:click="edit({{ $competition->id }})" class="serko-button-secondary px-3 py-2">Edit</button>
                     <button wire:click="delete({{ $competition->id }})" class="serko-button px-3 py-2">Delete</button>

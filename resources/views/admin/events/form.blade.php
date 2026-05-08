@@ -4,7 +4,7 @@
     @php($eventSeatMap = $event->seats->keyBy('id'))
 
     <section class="serko-card px-8 py-8">
-        <h1 class="text-3xl font-black">{{ $event->exists ? __('serko.admin.edit_event') : __('serko.admin.new_event') }}</h1>
+        <h1 class="font-display text-3xl font-black text-white">{{ $event->exists ? __('serko.admin.edit_event') : __('serko.admin.new_event') }}</h1>
 
         <form method="POST" action="{{ $event->exists ? route('admin.events.update', $event) : route('admin.events.store') }}" class="mt-6 space-y-5">
             @csrf
@@ -60,15 +60,15 @@
                 <div class="grid gap-4 md:grid-cols-2">
                     @foreach ($seatCatalogue as $stadiumId => $seats)
                         @php($stadium = $seats->first()->sector->stadium)
-                        <div class="rounded-3xl bg-slate-100 p-4" data-seat-catalogue-stadium="{{ $stadiumId }}">
-                            <p class="mb-3 font-semibold">{{ $stadium->name }}</p>
+                        <div class="rounded-3xl border border-white/10 bg-black/25 p-4" data-seat-catalogue-stadium="{{ $stadiumId }}">
+                            <p class="mb-3 font-semibold text-white">{{ $stadium->name }}</p>
                             <div class="grid gap-3">
                                 @foreach ($seats as $seat)
                                     @php($inputKey = $seat->id)
                                     @php($pivotSeat = $eventSeatMap->get($seat->id))
                                     @php($defaultPrice = $seat->sector->type === 'vip' ? '145.00' : ($seat->sector->type === 'family' ? '65.00' : '45.00'))
                                     <div class="grid grid-cols-[1fr_120px_130px] gap-3">
-                                        <div class="rounded-2xl bg-white px-3 py-2 text-sm">{{ $seat->sector->name }} / {{ $seat->row }}-{{ $seat->number }}</div>
+                                        <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-gray-300">{{ $seat->sector->name }} / {{ $seat->row }}-{{ $seat->number }}</div>
                                         <x-input type="number" step="0.01" name="seats[{{ $inputKey }}][price]" :value="old('seats.'.$inputKey.'.price', $pivotSeat?->pivot?->price ?? $defaultPrice)" />
                                         <input type="hidden" name="seats[{{ $inputKey }}][seat_id]" value="{{ $seat->id }}">
                                         <x-select name="seats[{{ $inputKey }}][status]">

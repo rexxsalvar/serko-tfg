@@ -1,4 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const mobileToggle = document.querySelector('[data-mobile-menu-toggle]');
+    const mobileMenu = document.querySelector('[data-mobile-menu]');
+
+    mobileToggle?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal-element').forEach((element) => revealObserver.observe(element));
+
+    const toastMessage = document.querySelector('[data-toast-message]')?.dataset.toastMessage;
+
+    if (toastMessage) {
+        const toast = document.createElement('div');
+        toast.className = 'serko-toast';
+        toast.textContent = toastMessage;
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateX(24px)';
+            setTimeout(() => toast.remove(), 300);
+        }, 3200);
+    }
+
     if (window.Dropzone) {
         window.Dropzone.autoDiscover = false;
 

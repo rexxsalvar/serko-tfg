@@ -4,8 +4,8 @@
     <section class="space-y-6">
         <div class="serko-card serko-reveal px-8 py-8">
             <p class="serko-kicker">{{ __('serko.admin.reports_kicker') }}</p>
-            <h1 class="mt-3 text-4xl font-black tracking-tight text-slate-950">{{ __('serko.admin.reports_title') }}</h1>
-            <p class="mt-3 max-w-2xl text-slate-600">{{ __('serko.admin.reports_subtitle') }}</p>
+            <h1 class="font-display mt-3 text-4xl font-black tracking-tight text-white">{{ __('serko.admin.reports_title') }}</h1>
+            <p class="mt-3 max-w-2xl text-gray-400">{{ __('serko.admin.reports_subtitle') }}</p>
         </div>
 
         <div class="grid gap-4 md:grid-cols-4">
@@ -17,8 +17,8 @@
 
         <x-card class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-                <h2 class="text-2xl font-bold">{{ __('serko.admin.exports_title') }}</h2>
-                <p class="mt-2 text-slate-600">{{ __('serko.admin.exports_subtitle') }}</p>
+                <h2 class="font-display text-2xl font-black text-white">{{ __('serko.admin.exports_title') }}</h2>
+                <p class="mt-2 text-gray-400">{{ __('serko.admin.exports_subtitle') }}</p>
                 <x-textarea name="admin_report_notes" class="mt-4" rows="2" placeholder="Internal report notes"></x-textarea>
             </div>
             <div class="flex flex-wrap gap-3">

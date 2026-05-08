@@ -5,7 +5,7 @@
     data-dropzone
     data-target="{{ $target ?? '#'.$name.'-input' }}"
     data-endpoint="{{ $endpoint ?? route('admin.media.store') }}"
-    {{ $attributes->merge(['class' => 'dropzone rounded-3xl border-2 border-dashed border-slate-300 bg-slate-50 p-6 text-sm text-slate-500']) }}
+    {{ $attributes->merge(['class' => 'dropzone rounded-3xl border-2 border-dashed border-white/20 bg-black/25 p-6 text-sm text-gray-400']) }}
 >
     {{ $slot->isEmpty() ? __('serko.admin.drag_drop') : $slot }}
 </div>

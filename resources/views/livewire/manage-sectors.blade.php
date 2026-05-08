@@ -13,8 +13,8 @@
 
     <div class="grid gap-3">
         @foreach ($sectors as $sector)
-            <article class="flex items-center justify-between rounded-2xl bg-white px-4 py-3">
-                <span class="font-bold">{{ $sector->stadium->name }} / {{ $sector->name }} / {{ $sector->type }}</span>
+            <article class="flex items-center justify-between rounded-2xl border border-white/10 bg-black/25 px-4 py-3">
+                <span class="font-bold text-white">{{ $sector->stadium->name }} / {{ $sector->name }} / {{ $sector->type }}</span>
                 <div class="flex gap-2">
                     <button wire:click="edit({{ $sector->id }})" class="serko-button-secondary px-3 py-2">Edit</button>
                     <button wire:click="delete({{ $sector->id }})" class="serko-button px-3 py-2">Delete</button>

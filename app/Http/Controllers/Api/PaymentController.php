@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdatePaymentRequest;
 use App\Http\Resources\PaymentResource;
 use App\Models\Payment;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
-use Illuminate\Validation\Rule;
 
 class PaymentController extends Controller
 {
@@ -28,17 +28,9 @@ class PaymentController extends Controller
         return new PaymentResource($payment);
     }
 
-    public function update(Request $request, Payment $payment): JsonResponse
+    public function update(UpdatePaymentRequest $request, Payment $payment): JsonResponse
     {
-        $this->authorize('update', $payment);
-
-        $validated = $request->validate([
-            'method' => ['sometimes', 'string', 'max:80'],
-            'status' => ['sometimes', Rule::in(['pending', 'completed', 'paid', 'captured', 'failed', 'refunded'])],
-            'transaction_id' => ['nullable', 'string', 'max:255'],
-        ]);
-
-        $payment->update($validated);
+        $payment->update($request->validated());
 
         return (new PaymentResource($payment->refresh()))->response();
     }

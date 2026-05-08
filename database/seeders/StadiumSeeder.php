@@ -11,10 +11,12 @@ class StadiumSeeder extends Seeder
 {
     public function run(): void
     {
+        $stadiumImage = 'stadiums/football-stadium-4k-2v-1280x720.jpg';
+
         $stadiums = [
-            ['name' => 'Santiago Bernabeu', 'city' => 'Madrid', 'capacity' => 81044, 'image' => 'https://placehold.co/1280x720/111827/fcbf49?text=Santiago+Bernabeu'],
-            ['name' => 'Camp Nou', 'city' => 'Barcelona', 'capacity' => 99354, 'image' => 'https://placehold.co/1280x720/111827/d62828?text=Camp+Nou'],
-            ['name' => 'Metropolitano', 'city' => 'Madrid', 'capacity' => 70460, 'image' => 'https://placehold.co/1280x720/111827/ffffff?text=Metropolitano'],
+            ['name' => 'Santiago Bernabeu', 'city' => 'Madrid', 'capacity' => 81044, 'image' => $stadiumImage],
+            ['name' => 'Camp Nou', 'city' => 'Barcelona', 'capacity' => 99354, 'image' => $stadiumImage],
+            ['name' => 'Metropolitano', 'city' => 'Madrid', 'capacity' => 70460, 'image' => $stadiumImage],
         ];
 
         foreach ($stadiums as $stadiumData) {

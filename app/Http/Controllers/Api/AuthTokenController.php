@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreAuthTokenRequest;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -11,13 +12,9 @@ use Illuminate\Validation\ValidationException;
 
 class AuthTokenController extends Controller
 {
-    public function store(Request $request): JsonResponse
+    public function store(StoreAuthTokenRequest $request): JsonResponse
     {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required', 'string'],
-            'device_name' => ['nullable', 'string', 'max:120'],
-        ]);
+        $credentials = $request->validated();
 
         $user = User::query()->where('email', $credentials['email'])->first();
 

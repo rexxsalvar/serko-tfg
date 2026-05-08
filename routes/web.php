@@ -58,6 +58,7 @@ Route::middleware('auth')->group(function (): void {
 });
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->group(function (): void {
+    Route::view('/', 'admin.index')->name('index');
     Route::resource('events', AdminEventController::class);
     Route::resource('stadiums', AdminStadiumController::class);
     Route::post('/media', [MediaController::class, 'store'])->name('media.store');

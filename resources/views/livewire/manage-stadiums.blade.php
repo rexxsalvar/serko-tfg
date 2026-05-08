@@ -5,8 +5,8 @@
         @foreach ($stadiums as $stadium)
             <article class="serko-card flex flex-col gap-4 px-6 py-5 md:flex-row md:items-center md:justify-between">
                 <div>
-                    <h2 class="text-xl font-bold">{{ $stadium->name }}</h2>
-                    <p class="text-sm text-slate-600">{{ $stadium->city }} - {{ $stadium->events_count }} eventos</p>
+                    <h2 class="text-xl font-bold text-white">{{ $stadium->name }}</h2>
+                    <p class="text-sm text-gray-400">{{ $stadium->city }} - {{ $stadium->events_count }} eventos</p>
                 </div>
                 <div class="flex gap-3">
                     <a href="{{ route('admin.stadiums.edit', $stadium) }}" class="serko-button-secondary">Editar</a>

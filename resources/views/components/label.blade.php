@@ -1,5 +1,5 @@
 @props(['value'])
 
-<label {{ $attributes->class('mb-2 block text-sm font-semibold text-slate-700') }}>
+<label {{ $attributes->class('serko-label') }}>
     {{ $value ?? $slot }}
 </label>

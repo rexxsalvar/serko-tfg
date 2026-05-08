@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="serko-card px-8 py-8">
-        <h1 class="text-3xl font-black">{{ $stadium->exists ? __('serko.admin.edit_stadium') : __('serko.admin.new_stadium') }}</h1>
+        <h1 class="font-display text-3xl font-black text-white">{{ $stadium->exists ? __('serko.admin.edit_stadium') : __('serko.admin.new_stadium') }}</h1>
 
         <form method="POST" action="{{ $stadium->exists ? route('admin.stadiums.update', $stadium) : route('admin.stadiums.store') }}" class="mt-6 space-y-5">
             @csrf
