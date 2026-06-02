@@ -1,0 +1,1997 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/tokens
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        custom: []
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: gbailey@example.net
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: ''
+        required: true
+        example: '|]|{+-'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      device_name:
+        custom: []
+        name: device_name
+        description: 'Must not be greater than 120 characters.'
+        required: false
+        example: v
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      email: gbailey@example.net
+      password: '|]|{+-'
+      device_name: v
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/events
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":[],"links":{"first":"http:\/\/localhost:8080\/api\/events?page=1","last":"http:\/\/localhost:8080\/api\/events?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":null,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","page":null,"active":false},{"url":"http:\/\/localhost:8080\/api\/events?page=1","label":"1","page":1,"active":true},{"url":null,"label":"Next &raquo;","page":null,"active":false}],"path":"http:\/\/localhost:8080\/api\/events","per_page":15,"to":null,"total":0}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/events/{event_id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      event_id:
+        custom: []
+        name: event_id
+        description: 'The ID of the event.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      event_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":{"id":1,"date":"2026-05-03T14:08:37+02:00","description":"Partido destacado de la jornada.","competition":{"id":4,"name":"Copa del Rey"},"stadium":{"id":1,"name":"Estadio town","city":"Satterfieldburgh","capacity":68074,"image_url":"http:\/\/localhost:8080\/storage\/stadiums\/football-stadium-4k-2v-1280x720.jpg"},"home_team":{"id":3,"name":"Atletico de Madrid","logo":"https:\/\/placehold.co\/400x400?text=Atletico+de+Madrid"},"away_team":{"id":4,"name":"Sevilla FC","logo":"https:\/\/placehold.co\/400x400?text=Sevilla+FC"},"seats":[{"id":1,"row":"A","number":1,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"41.32","event_status":"available"},{"id":2,"row":"A","number":2,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"155.16","event_status":"available"},{"id":3,"row":"A","number":3,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"166.28","event_status":"available"},{"id":4,"row":"A","number":4,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"192.52","event_status":"available"},{"id":5,"row":"A","number":5,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"113.24","event_status":"available"},{"id":6,"row":"A","number":6,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"114.53","event_status":"available"},{"id":7,"row":"A","number":7,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"154.39","event_status":"available"},{"id":8,"row":"A","number":8,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"35.01","event_status":"available"},{"id":9,"row":"A","number":9,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"39.80","event_status":"available"},{"id":10,"row":"A","number":10,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"177.24","event_status":"available"},{"id":11,"row":"A","number":11,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"92.00","event_status":"available"},{"id":12,"row":"A","number":12,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"173.27","event_status":"available"},{"id":13,"row":"B","number":1,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"92.66","event_status":"available"},{"id":14,"row":"B","number":2,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"168.62","event_status":"available"},{"id":15,"row":"B","number":3,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"195.69","event_status":"available"},{"id":16,"row":"B","number":4,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"69.02","event_status":"available"},{"id":17,"row":"B","number":5,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"129.98","event_status":"available"},{"id":18,"row":"B","number":6,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"161.75","event_status":"available"},{"id":19,"row":"B","number":7,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"141.88","event_status":"available"},{"id":20,"row":"B","number":8,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"87.79","event_status":"available"},{"id":21,"row":"B","number":9,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"198.14","event_status":"available"},{"id":22,"row":"B","number":10,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"138.30","event_status":"available"},{"id":23,"row":"B","number":11,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"173.01","event_status":"available"},{"id":24,"row":"B","number":12,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"93.23","event_status":"available"},{"id":25,"row":"C","number":1,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"165.37","event_status":"available"},{"id":26,"row":"C","number":2,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"199.55","event_status":"available"},{"id":27,"row":"C","number":3,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"159.12","event_status":"available"},{"id":28,"row":"C","number":4,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"201.93","event_status":"available"},{"id":29,"row":"C","number":5,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"35.29","event_status":"available"},{"id":30,"row":"C","number":6,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"206.64","event_status":"available"},{"id":31,"row":"C","number":7,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"103.57","event_status":"available"},{"id":32,"row":"C","number":8,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"196.81","event_status":"available"},{"id":33,"row":"C","number":9,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"147.77","event_status":"available"},{"id":34,"row":"C","number":10,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"46.88","event_status":"available"},{"id":35,"row":"C","number":11,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"208.69","event_status":"available"},{"id":36,"row":"C","number":12,"sector":{"id":1,"name":"Sector h3","type":"family"},"event_price":"126.48","event_status":"available"},{"id":37,"row":"A","number":1,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"118.27","event_status":"available"},{"id":38,"row":"A","number":2,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"196.92","event_status":"available"},{"id":39,"row":"A","number":3,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"173.45","event_status":"available"},{"id":40,"row":"A","number":4,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"126.38","event_status":"available"},{"id":41,"row":"A","number":5,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"178.33","event_status":"available"},{"id":42,"row":"A","number":6,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"36.38","event_status":"available"},{"id":43,"row":"A","number":7,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"96.52","event_status":"available"},{"id":44,"row":"A","number":8,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"67.38","event_status":"available"},{"id":45,"row":"A","number":9,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"111.47","event_status":"available"},{"id":46,"row":"A","number":10,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"154.87","event_status":"available"},{"id":47,"row":"A","number":11,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"184.34","event_status":"available"},{"id":48,"row":"A","number":12,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"115.46","event_status":"available"},{"id":49,"row":"B","number":1,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"68.95","event_status":"available"},{"id":50,"row":"B","number":2,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"44.90","event_status":"available"},{"id":51,"row":"B","number":3,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"132.11","event_status":"available"},{"id":52,"row":"B","number":4,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"208.52","event_status":"available"},{"id":53,"row":"B","number":5,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"43.43","event_status":"available"},{"id":54,"row":"B","number":6,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"42.64","event_status":"available"},{"id":55,"row":"B","number":7,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"190.21","event_status":"available"},{"id":56,"row":"B","number":8,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"175.33","event_status":"available"},{"id":57,"row":"B","number":9,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"195.38","event_status":"available"},{"id":58,"row":"B","number":10,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"93.33","event_status":"available"},{"id":59,"row":"B","number":11,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"183.45","event_status":"available"},{"id":60,"row":"B","number":12,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"97.47","event_status":"available"},{"id":61,"row":"C","number":1,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"116.81","event_status":"available"},{"id":62,"row":"C","number":2,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"117.31","event_status":"available"},{"id":63,"row":"C","number":3,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"174.02","event_status":"available"},{"id":64,"row":"C","number":4,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"206.90","event_status":"available"},{"id":65,"row":"C","number":5,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"214.49","event_status":"available"},{"id":66,"row":"C","number":6,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"98.33","event_status":"available"},{"id":67,"row":"C","number":7,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"88.47","event_status":"available"},{"id":68,"row":"C","number":8,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"167.73","event_status":"available"},{"id":69,"row":"C","number":9,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"80.04","event_status":"available"},{"id":70,"row":"C","number":10,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"146.31","event_status":"available"},{"id":71,"row":"C","number":11,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"103.70","event_status":"available"},{"id":72,"row":"C","number":12,"sector":{"id":2,"name":"Sector v9","type":"family"},"event_price":"169.55","event_status":"available"},{"id":73,"row":"A","number":1,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"188.44","event_status":"available"},{"id":74,"row":"A","number":2,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"75.25","event_status":"available"},{"id":75,"row":"A","number":3,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"181.56","event_status":"available"},{"id":76,"row":"A","number":4,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"41.62","event_status":"available"},{"id":77,"row":"A","number":5,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"117.95","event_status":"available"},{"id":78,"row":"A","number":6,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"216.15","event_status":"available"},{"id":79,"row":"A","number":7,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"194.32","event_status":"available"},{"id":80,"row":"A","number":8,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"131.84","event_status":"available"},{"id":81,"row":"A","number":9,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"88.73","event_status":"available"},{"id":82,"row":"A","number":10,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"133.79","event_status":"available"},{"id":83,"row":"A","number":11,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"215.10","event_status":"available"},{"id":84,"row":"A","number":12,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"212.85","event_status":"available"},{"id":85,"row":"B","number":1,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"167.09","event_status":"available"},{"id":86,"row":"B","number":2,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"97.02","event_status":"available"},{"id":87,"row":"B","number":3,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"182.18","event_status":"available"},{"id":88,"row":"B","number":4,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"172.47","event_status":"available"},{"id":89,"row":"B","number":5,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"124.21","event_status":"available"},{"id":90,"row":"B","number":6,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"103.07","event_status":"available"},{"id":91,"row":"B","number":7,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"58.59","event_status":"available"},{"id":92,"row":"B","number":8,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"66.97","event_status":"available"},{"id":93,"row":"B","number":9,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"30.85","event_status":"available"},{"id":94,"row":"B","number":10,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"93.87","event_status":"available"},{"id":95,"row":"B","number":11,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"33.39","event_status":"available"},{"id":96,"row":"B","number":12,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"186.97","event_status":"available"},{"id":97,"row":"C","number":1,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"59.66","event_status":"available"},{"id":98,"row":"C","number":2,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"107.27","event_status":"available"},{"id":99,"row":"C","number":3,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"179.70","event_status":"available"},{"id":100,"row":"C","number":4,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"144.10","event_status":"available"},{"id":101,"row":"C","number":5,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"33.44","event_status":"available"},{"id":102,"row":"C","number":6,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"173.11","event_status":"available"},{"id":103,"row":"C","number":7,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"182.25","event_status":"available"},{"id":104,"row":"C","number":8,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"66.95","event_status":"available"},{"id":105,"row":"C","number":9,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"108.66","event_status":"available"},{"id":106,"row":"C","number":10,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"210.03","event_status":"available"},{"id":107,"row":"C","number":11,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"214.82","event_status":"available"},{"id":108,"row":"C","number":12,"sector":{"id":3,"name":"Sector b3","type":"vip"},"event_price":"186.74","event_status":"available"}]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/stadiums
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":[{"id":1,"name":"Estadio town","city":"Satterfieldburgh","capacity":68074,"image_url":"http:\/\/localhost:8080\/storage\/stadiums\/football-stadium-4k-2v-1280x720.jpg","events_count":1,"sectors_count":3},{"id":2,"name":"Estadio borough","city":"Tiffanyton","capacity":69145,"image_url":"http:\/\/localhost:8080\/storage\/stadiums\/football-stadium-4k-2v-1280x720.jpg","events_count":1,"sectors_count":3},{"id":3,"name":"Estadio ville","city":"Hoseaburgh","capacity":28806,"image_url":"http:\/\/localhost:8080\/storage\/stadiums\/football-stadium-4k-2v-1280x720.jpg","events_count":1,"sectors_count":3},{"id":4,"name":"Santiago Bernabeu","city":"Madrid","capacity":81044,"image_url":"http:\/\/localhost:8080\/storage\/stadiums\/football-stadium-4k-2v-1280x720.jpg","events_count":1,"sectors_count":3},{"id":5,"name":"Camp Nou","city":"Barcelona","capacity":99354,"image_url":"http:\/\/localhost:8080\/storage\/stadiums\/football-stadium-4k-2v-1280x720.jpg","events_count":1,"sectors_count":3},{"id":6,"name":"Metropolitano","city":"Madrid","capacity":70460,"image_url":"http:\/\/localhost:8080\/storage\/stadiums\/football-stadium-4k-2v-1280x720.jpg","events_count":0,"sectors_count":3}],"links":{"first":"http:\/\/localhost:8080\/api\/stadiums?page=1","last":"http:\/\/localhost:8080\/api\/stadiums?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","page":null,"active":false},{"url":"http:\/\/localhost:8080\/api\/stadiums?page=1","label":"1","page":1,"active":true},{"url":null,"label":"Next &raquo;","page":null,"active":false}],"path":"http:\/\/localhost:8080\/api\/stadiums","per_page":15,"to":6,"total":6}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/stadiums/{stadium_id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      stadium_id:
+        custom: []
+        name: stadium_id
+        description: 'The ID of the stadium.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      stadium_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":{"id":1,"name":"Estadio town","city":"Satterfieldburgh","capacity":68074,"image_url":"http:\/\/localhost:8080\/storage\/stadiums\/football-stadium-4k-2v-1280x720.jpg","sectors":[{"id":1,"name":"Sector h3","type":"family","seats":[{"id":1,"row":"A","number":1,"event_price":null,"event_status":null},{"id":2,"row":"A","number":2,"event_price":null,"event_status":null},{"id":3,"row":"A","number":3,"event_price":null,"event_status":null},{"id":4,"row":"A","number":4,"event_price":null,"event_status":null},{"id":5,"row":"A","number":5,"event_price":null,"event_status":null},{"id":6,"row":"A","number":6,"event_price":null,"event_status":null},{"id":7,"row":"A","number":7,"event_price":null,"event_status":null},{"id":8,"row":"A","number":8,"event_price":null,"event_status":null},{"id":9,"row":"A","number":9,"event_price":null,"event_status":null},{"id":10,"row":"A","number":10,"event_price":null,"event_status":null},{"id":11,"row":"A","number":11,"event_price":null,"event_status":null},{"id":12,"row":"A","number":12,"event_price":null,"event_status":null},{"id":13,"row":"B","number":1,"event_price":null,"event_status":null},{"id":14,"row":"B","number":2,"event_price":null,"event_status":null},{"id":15,"row":"B","number":3,"event_price":null,"event_status":null},{"id":16,"row":"B","number":4,"event_price":null,"event_status":null},{"id":17,"row":"B","number":5,"event_price":null,"event_status":null},{"id":18,"row":"B","number":6,"event_price":null,"event_status":null},{"id":19,"row":"B","number":7,"event_price":null,"event_status":null},{"id":20,"row":"B","number":8,"event_price":null,"event_status":null},{"id":21,"row":"B","number":9,"event_price":null,"event_status":null},{"id":22,"row":"B","number":10,"event_price":null,"event_status":null},{"id":23,"row":"B","number":11,"event_price":null,"event_status":null},{"id":24,"row":"B","number":12,"event_price":null,"event_status":null},{"id":25,"row":"C","number":1,"event_price":null,"event_status":null},{"id":26,"row":"C","number":2,"event_price":null,"event_status":null},{"id":27,"row":"C","number":3,"event_price":null,"event_status":null},{"id":28,"row":"C","number":4,"event_price":null,"event_status":null},{"id":29,"row":"C","number":5,"event_price":null,"event_status":null},{"id":30,"row":"C","number":6,"event_price":null,"event_status":null},{"id":31,"row":"C","number":7,"event_price":null,"event_status":null},{"id":32,"row":"C","number":8,"event_price":null,"event_status":null},{"id":33,"row":"C","number":9,"event_price":null,"event_status":null},{"id":34,"row":"C","number":10,"event_price":null,"event_status":null},{"id":35,"row":"C","number":11,"event_price":null,"event_status":null},{"id":36,"row":"C","number":12,"event_price":null,"event_status":null}]},{"id":2,"name":"Sector v9","type":"family","seats":[{"id":37,"row":"A","number":1,"event_price":null,"event_status":null},{"id":38,"row":"A","number":2,"event_price":null,"event_status":null},{"id":39,"row":"A","number":3,"event_price":null,"event_status":null},{"id":40,"row":"A","number":4,"event_price":null,"event_status":null},{"id":41,"row":"A","number":5,"event_price":null,"event_status":null},{"id":42,"row":"A","number":6,"event_price":null,"event_status":null},{"id":43,"row":"A","number":7,"event_price":null,"event_status":null},{"id":44,"row":"A","number":8,"event_price":null,"event_status":null},{"id":45,"row":"A","number":9,"event_price":null,"event_status":null},{"id":46,"row":"A","number":10,"event_price":null,"event_status":null},{"id":47,"row":"A","number":11,"event_price":null,"event_status":null},{"id":48,"row":"A","number":12,"event_price":null,"event_status":null},{"id":49,"row":"B","number":1,"event_price":null,"event_status":null},{"id":50,"row":"B","number":2,"event_price":null,"event_status":null},{"id":51,"row":"B","number":3,"event_price":null,"event_status":null},{"id":52,"row":"B","number":4,"event_price":null,"event_status":null},{"id":53,"row":"B","number":5,"event_price":null,"event_status":null},{"id":54,"row":"B","number":6,"event_price":null,"event_status":null},{"id":55,"row":"B","number":7,"event_price":null,"event_status":null},{"id":56,"row":"B","number":8,"event_price":null,"event_status":null},{"id":57,"row":"B","number":9,"event_price":null,"event_status":null},{"id":58,"row":"B","number":10,"event_price":null,"event_status":null},{"id":59,"row":"B","number":11,"event_price":null,"event_status":null},{"id":60,"row":"B","number":12,"event_price":null,"event_status":null},{"id":61,"row":"C","number":1,"event_price":null,"event_status":null},{"id":62,"row":"C","number":2,"event_price":null,"event_status":null},{"id":63,"row":"C","number":3,"event_price":null,"event_status":null},{"id":64,"row":"C","number":4,"event_price":null,"event_status":null},{"id":65,"row":"C","number":5,"event_price":null,"event_status":null},{"id":66,"row":"C","number":6,"event_price":null,"event_status":null},{"id":67,"row":"C","number":7,"event_price":null,"event_status":null},{"id":68,"row":"C","number":8,"event_price":null,"event_status":null},{"id":69,"row":"C","number":9,"event_price":null,"event_status":null},{"id":70,"row":"C","number":10,"event_price":null,"event_status":null},{"id":71,"row":"C","number":11,"event_price":null,"event_status":null},{"id":72,"row":"C","number":12,"event_price":null,"event_status":null}]},{"id":3,"name":"Sector b3","type":"vip","seats":[{"id":73,"row":"A","number":1,"event_price":null,"event_status":null},{"id":74,"row":"A","number":2,"event_price":null,"event_status":null},{"id":75,"row":"A","number":3,"event_price":null,"event_status":null},{"id":76,"row":"A","number":4,"event_price":null,"event_status":null},{"id":77,"row":"A","number":5,"event_price":null,"event_status":null},{"id":78,"row":"A","number":6,"event_price":null,"event_status":null},{"id":79,"row":"A","number":7,"event_price":null,"event_status":null},{"id":80,"row":"A","number":8,"event_price":null,"event_status":null},{"id":81,"row":"A","number":9,"event_price":null,"event_status":null},{"id":82,"row":"A","number":10,"event_price":null,"event_status":null},{"id":83,"row":"A","number":11,"event_price":null,"event_status":null},{"id":84,"row":"A","number":12,"event_price":null,"event_status":null},{"id":85,"row":"B","number":1,"event_price":null,"event_status":null},{"id":86,"row":"B","number":2,"event_price":null,"event_status":null},{"id":87,"row":"B","number":3,"event_price":null,"event_status":null},{"id":88,"row":"B","number":4,"event_price":null,"event_status":null},{"id":89,"row":"B","number":5,"event_price":null,"event_status":null},{"id":90,"row":"B","number":6,"event_price":null,"event_status":null},{"id":91,"row":"B","number":7,"event_price":null,"event_status":null},{"id":92,"row":"B","number":8,"event_price":null,"event_status":null},{"id":93,"row":"B","number":9,"event_price":null,"event_status":null},{"id":94,"row":"B","number":10,"event_price":null,"event_status":null},{"id":95,"row":"B","number":11,"event_price":null,"event_status":null},{"id":96,"row":"B","number":12,"event_price":null,"event_status":null},{"id":97,"row":"C","number":1,"event_price":null,"event_status":null},{"id":98,"row":"C","number":2,"event_price":null,"event_status":null},{"id":99,"row":"C","number":3,"event_price":null,"event_status":null},{"id":100,"row":"C","number":4,"event_price":null,"event_status":null},{"id":101,"row":"C","number":5,"event_price":null,"event_status":null},{"id":102,"row":"C","number":6,"event_price":null,"event_status":null},{"id":103,"row":"C","number":7,"event_price":null,"event_status":null},{"id":104,"row":"C","number":8,"event_price":null,"event_status":null},{"id":105,"row":"C","number":9,"event_price":null,"event_status":null},{"id":106,"row":"C","number":10,"event_price":null,"event_status":null},{"id":107,"row":"C","number":11,"event_price":null,"event_status":null},{"id":108,"row":"C","number":12,"event_price":null,"event_status":null}]}],"events":[{"id":1,"date":"2026-05-03T14:08:37+02:00","description":"Partido destacado de la jornada.","home_team":{"id":3,"name":"Atletico de Madrid","logo":"https:\/\/placehold.co\/400x400?text=Atletico+de+Madrid"},"away_team":{"id":4,"name":"Sevilla FC","logo":"https:\/\/placehold.co\/400x400?text=Sevilla+FC"}}]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/teams
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":[{"id":1,"name":"Real Madrid","logo":"https:\/\/placehold.co\/400x400?text=Real+Madrid"},{"id":2,"name":"FC Barcelona","logo":"https:\/\/placehold.co\/400x400?text=FC+Barcelona"},{"id":3,"name":"Atletico de Madrid","logo":"https:\/\/placehold.co\/400x400?text=Atletico+de+Madrid"},{"id":4,"name":"Sevilla FC","logo":"https:\/\/placehold.co\/400x400?text=Sevilla+FC"},{"id":5,"name":"Valencia CF","logo":"https:\/\/placehold.co\/400x400?text=Valencia+CF"},{"id":6,"name":"Real Betis","logo":"https:\/\/placehold.co\/400x400?text=Real+Betis"},{"id":7,"name":"abrisqueta fc","logo":"https:\/\/www.youtube.com\/@polideportivoatleticosango981"}],"links":{"first":"http:\/\/localhost:8080\/api\/teams?page=1","last":"http:\/\/localhost:8080\/api\/teams?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","page":null,"active":false},{"url":"http:\/\/localhost:8080\/api\/teams?page=1","label":"1","page":1,"active":true},{"url":null,"label":"Next &raquo;","page":null,"active":false}],"path":"http:\/\/localhost:8080\/api\/teams","per_page":15,"to":7,"total":7}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/teams/{team_id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      team_id:
+        custom: []
+        name: team_id
+        description: 'The ID of the team.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      team_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":{"id":1,"name":"Real Madrid","logo":"https:\/\/placehold.co\/400x400?text=Real+Madrid"}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/competitions
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":[{"id":2,"name":"Champions League"},{"id":4,"name":"Copa del Rey"},{"id":3,"name":"Europa League"},{"id":1,"name":"LaLiga"}],"links":{"first":"http:\/\/localhost:8080\/api\/competitions?page=1","last":"http:\/\/localhost:8080\/api\/competitions?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","page":null,"active":false},{"url":"http:\/\/localhost:8080\/api\/competitions?page=1","label":"1","page":1,"active":true},{"url":null,"label":"Next &raquo;","page":null,"active":false}],"path":"http:\/\/localhost:8080\/api\/competitions","per_page":15,"to":4,"total":4}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/competitions/{competition_id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      competition_id:
+        custom: []
+        name: competition_id
+        description: 'The ID of the competition.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      competition_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":{"id":1,"name":"LaLiga"}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/sectors
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":[{"id":1,"name":"Sector h3","type":"family","seats_count":36},{"id":2,"name":"Sector v9","type":"family","seats_count":36},{"id":3,"name":"Sector b3","type":"vip","seats_count":36},{"id":4,"name":"Sector z6","type":"vip","seats_count":36},{"id":5,"name":"Sector z9","type":"vip","seats_count":36},{"id":6,"name":"Sector e7","type":"general","seats_count":36},{"id":7,"name":"Sector b9","type":"vip","seats_count":36},{"id":8,"name":"Sector z7","type":"family","seats_count":36},{"id":9,"name":"Sector p9","type":"family","seats_count":36},{"id":10,"name":"Fondo Norte","type":"general","seats_count":36},{"id":11,"name":"Lateral Este","type":"family","seats_count":36},{"id":12,"name":"Tribuna VIP","type":"vip","seats_count":36},{"id":13,"name":"Fondo Norte","type":"general","seats_count":36},{"id":14,"name":"Lateral Este","type":"family","seats_count":36},{"id":15,"name":"Tribuna VIP","type":"vip","seats_count":36}],"links":{"first":"http:\/\/localhost:8080\/api\/sectors?page=1","last":"http:\/\/localhost:8080\/api\/sectors?page=2","prev":null,"next":"http:\/\/localhost:8080\/api\/sectors?page=2"},"meta":{"current_page":1,"from":1,"last_page":2,"links":[{"url":null,"label":"&laquo; Previous","page":null,"active":false},{"url":"http:\/\/localhost:8080\/api\/sectors?page=1","label":"1","page":1,"active":true},{"url":"http:\/\/localhost:8080\/api\/sectors?page=2","label":"2","page":2,"active":false},{"url":"http:\/\/localhost:8080\/api\/sectors?page=2","label":"Next &raquo;","page":2,"active":false}],"path":"http:\/\/localhost:8080\/api\/sectors","per_page":15,"to":15,"total":18}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/sectors/{sector_id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      sector_id:
+        custom: []
+        name: sector_id
+        description: 'The ID of the sector.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      sector_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":{"id":1,"name":"Sector h3","type":"family","seats_count":36,"seats":[{"id":1,"row":"A","number":1,"event_price":null,"event_status":null},{"id":2,"row":"A","number":2,"event_price":null,"event_status":null},{"id":3,"row":"A","number":3,"event_price":null,"event_status":null},{"id":4,"row":"A","number":4,"event_price":null,"event_status":null},{"id":5,"row":"A","number":5,"event_price":null,"event_status":null},{"id":6,"row":"A","number":6,"event_price":null,"event_status":null},{"id":7,"row":"A","number":7,"event_price":null,"event_status":null},{"id":8,"row":"A","number":8,"event_price":null,"event_status":null},{"id":9,"row":"A","number":9,"event_price":null,"event_status":null},{"id":10,"row":"A","number":10,"event_price":null,"event_status":null},{"id":11,"row":"A","number":11,"event_price":null,"event_status":null},{"id":12,"row":"A","number":12,"event_price":null,"event_status":null},{"id":13,"row":"B","number":1,"event_price":null,"event_status":null},{"id":14,"row":"B","number":2,"event_price":null,"event_status":null},{"id":15,"row":"B","number":3,"event_price":null,"event_status":null},{"id":16,"row":"B","number":4,"event_price":null,"event_status":null},{"id":17,"row":"B","number":5,"event_price":null,"event_status":null},{"id":18,"row":"B","number":6,"event_price":null,"event_status":null},{"id":19,"row":"B","number":7,"event_price":null,"event_status":null},{"id":20,"row":"B","number":8,"event_price":null,"event_status":null},{"id":21,"row":"B","number":9,"event_price":null,"event_status":null},{"id":22,"row":"B","number":10,"event_price":null,"event_status":null},{"id":23,"row":"B","number":11,"event_price":null,"event_status":null},{"id":24,"row":"B","number":12,"event_price":null,"event_status":null},{"id":25,"row":"C","number":1,"event_price":null,"event_status":null},{"id":26,"row":"C","number":2,"event_price":null,"event_status":null},{"id":27,"row":"C","number":3,"event_price":null,"event_status":null},{"id":28,"row":"C","number":4,"event_price":null,"event_status":null},{"id":29,"row":"C","number":5,"event_price":null,"event_status":null},{"id":30,"row":"C","number":6,"event_price":null,"event_status":null},{"id":31,"row":"C","number":7,"event_price":null,"event_status":null},{"id":32,"row":"C","number":8,"event_price":null,"event_status":null},{"id":33,"row":"C","number":9,"event_price":null,"event_status":null},{"id":34,"row":"C","number":10,"event_price":null,"event_status":null},{"id":35,"row":"C","number":11,"event_price":null,"event_status":null},{"id":36,"row":"C","number":12,"event_price":null,"event_status":null}]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: api/tokens/current
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/events
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      stadium_id:
+        custom: []
+        name: stadium_id
+        description: 'The <code>id</code> of an existing record in the stadiums table.'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      competition_id:
+        custom: []
+        name: competition_id
+        description: 'The <code>id</code> of an existing record in the competitions table.'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      home_team_id:
+        custom: []
+        name: home_team_id
+        description: 'The value and <code>away_team_id</code> must be different. The <code>id</code> of an existing record in the teams table.'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      away_team_id:
+        custom: []
+        name: away_team_id
+        description: 'The <code>id</code> of an existing record in the teams table.'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      date:
+        custom: []
+        name: date
+        description: 'Must be a valid date. Must be a date after <code>now</code>.'
+        required: true
+        example: '2052-06-26'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      description:
+        custom: []
+        name: description
+        description: ''
+        required: false
+        example: 'Eius et animi quos velit et.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      seats:
+        custom: []
+        name: seats
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'seats[].seat_id':
+        custom: []
+        name: 'seats[].seat_id'
+        description: 'This field is required when <code>seats</code> is present. The <code>id</code> of an existing record in the seats table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'seats[].price':
+        custom: []
+        name: 'seats[].price'
+        description: 'This field is required when <code>seats</code> is present. Must be at least 0.'
+        required: false
+        example: 60
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'seats[].status':
+        custom: []
+        name: 'seats[].status'
+        description: ''
+        required: false
+        example: available
+        type: string
+        enumValues:
+          - available
+          - reserved
+          - sold
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      stadium_id: architecto
+      competition_id: architecto
+      home_team_id: architecto
+      away_team_id: architecto
+      date: '2052-06-26'
+      description: 'Eius et animi quos velit et.'
+      seats:
+        - price: 60
+          status: available
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/events/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the event.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      stadium_id:
+        custom: []
+        name: stadium_id
+        description: 'The <code>id</code> of an existing record in the stadiums table.'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      competition_id:
+        custom: []
+        name: competition_id
+        description: 'The <code>id</code> of an existing record in the competitions table.'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      home_team_id:
+        custom: []
+        name: home_team_id
+        description: 'The value and <code>away_team_id</code> must be different. The <code>id</code> of an existing record in the teams table.'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      away_team_id:
+        custom: []
+        name: away_team_id
+        description: 'The <code>id</code> of an existing record in the teams table.'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      date:
+        custom: []
+        name: date
+        description: 'Must be a valid date. Must be a date after <code>now</code>.'
+        required: true
+        example: '2052-06-26'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      description:
+        custom: []
+        name: description
+        description: ''
+        required: false
+        example: 'Eius et animi quos velit et.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      seats:
+        custom: []
+        name: seats
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'seats[].seat_id':
+        custom: []
+        name: 'seats[].seat_id'
+        description: 'This field is required when <code>seats</code> is present. The <code>id</code> of an existing record in the seats table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'seats[].price':
+        custom: []
+        name: 'seats[].price'
+        description: 'This field is required when <code>seats</code> is present. Must be at least 0.'
+        required: false
+        example: 60
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'seats[].status':
+        custom: []
+        name: 'seats[].status'
+        description: ''
+        required: false
+        example: available
+        type: string
+        enumValues:
+          - available
+          - reserved
+          - sold
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      stadium_id: architecto
+      competition_id: architecto
+      home_team_id: architecto
+      away_team_id: architecto
+      date: '2052-06-26'
+      description: 'Eius et animi quos velit et.'
+      seats:
+        - price: 60
+          status: available
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/events/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the event.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/stadiums
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: b
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      city:
+        custom: []
+        name: city
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: 'n'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      capacity:
+        custom: []
+        name: capacity
+        description: 'Must be at least 1.'
+        required: true
+        example: 67
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      image:
+        custom: []
+        name: image
+        description: 'Must not be greater than 2048 characters.'
+        required: false
+        example: z
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: b
+      city: 'n'
+      capacity: 67
+      image: z
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/stadiums/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the stadium.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: b
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      city:
+        custom: []
+        name: city
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: 'n'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      capacity:
+        custom: []
+        name: capacity
+        description: 'Must be at least 1.'
+        required: true
+        example: 67
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      image:
+        custom: []
+        name: image
+        description: 'Must not be greater than 2048 characters.'
+        required: false
+        example: z
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: b
+      city: 'n'
+      capacity: 67
+      image: z
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/stadiums/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the stadium.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/teams
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: b
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      logo:
+        custom: []
+        name: logo
+        description: 'Must not be greater than 2048 characters.'
+        required: false
+        example: 'n'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: b
+      logo: 'n'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/teams/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the team.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: b
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      logo:
+        custom: []
+        name: logo
+        description: 'Must not be greater than 2048 characters.'
+        required: false
+        example: 'n'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: b
+      logo: 'n'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/teams/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the team.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/competitions
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: b
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name: b
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/competitions/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the competition.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: b
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name: b
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/competitions/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the competition.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/sectors
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      stadium_id:
+        custom: []
+        name: stadium_id
+        description: 'The <code>id</code> of an existing record in the stadiums table.'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      name:
+        custom: []
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: 'n'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      type:
+        custom: []
+        name: type
+        description: 'Must not be greater than 80 characters.'
+        required: true
+        example: g
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      stadium_id: architecto
+      name: 'n'
+      type: g
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/sectors/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the sector.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      stadium_id:
+        custom: []
+        name: stadium_id
+        description: 'The <code>id</code> of an existing record in the stadiums table.'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      name:
+        custom: []
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: 'n'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      type:
+        custom: []
+        name: type
+        description: 'Must not be greater than 80 characters.'
+        required: true
+        example: g
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      stadium_id: architecto
+      name: 'n'
+      type: g
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/sectors/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the sector.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/orders
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/orders/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the order.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/payments
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/payments/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the payment.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/payments/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the payment.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      method:
+        custom: []
+        name: method
+        description: 'Must not be greater than 80 characters.'
+        required: false
+        example: b
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      status:
+        custom: []
+        name: status
+        description: ''
+        required: false
+        example: captured
+        type: string
+        enumValues:
+          - pending
+          - completed
+          - paid
+          - captured
+          - failed
+          - refunded
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      transaction_id:
+        custom: []
+        name: transaction_id
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: 'n'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      method: b
+      status: captured
+      transaction_id: 'n'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/tickets
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/tickets/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the ticket.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
