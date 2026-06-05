@@ -688,7 +688,7 @@ endpoints:
         name: 'seats[].status'
         description: ''
         required: false
-        example: available
+        example: sold
         type: string
         enumValues:
           - available
@@ -706,7 +706,7 @@ endpoints:
       description: 'Eius et animi quos velit et.'
       seats:
         - price: 60
-          status: available
+          status: sold
     fileParameters: []
     responses: []
     responseFields: []
@@ -1871,7 +1871,7 @@ endpoints:
         name: status
         description: ''
         required: false
-        example: captured
+        example: completed
         type: string
         enumValues:
           - pending
@@ -1896,7 +1896,7 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       method: b
-      status: captured
+      status: completed
       transaction_id: 'n'
     fileParameters: []
     responses: []

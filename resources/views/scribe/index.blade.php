@@ -4610,7 +4610,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"seats\": [
         {
             \"price\": 60,
-            \"status\": \"available\"
+            \"status\": \"sold\"
         }
     ]
 }"
@@ -4637,7 +4637,7 @@ let body = {
     "seats": [
         {
             "price": 60,
-            "status": "available"
+            "status": "sold"
         }
     ]
 };
@@ -4837,10 +4837,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="seats.0.status"                data-endpoint="POSTapi-events"
-               value="available"
+               value="sold"
                data-component="body">
     <br>
-<p>Example: <code>available</code></p>
+<p>Example: <code>sold</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>available</code></li> <li><code>reserved</code></li> <li><code>sold</code></li></ul>
                     </div>
@@ -7593,7 +7593,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"method\": \"b\",
-    \"status\": \"captured\",
+    \"status\": \"completed\",
     \"transaction_id\": \"n\"
 }"
 </code></pre></div>
@@ -7611,7 +7611,7 @@ const headers = {
 
 let body = {
     "method": "b",
-    "status": "captured",
+    "status": "completed",
     "transaction_id": "n"
 };
 
@@ -7733,10 +7733,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="PUTapi-payments--id-"
-               value="captured"
+               value="completed"
                data-component="body">
     <br>
-<p>Example: <code>captured</code></p>
+<p>Example: <code>completed</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>pending</code></li> <li><code>completed</code></li> <li><code>paid</code></li> <li><code>captured</code></li> <li><code>failed</code></li> <li><code>refunded</code></li></ul>
         </div>
