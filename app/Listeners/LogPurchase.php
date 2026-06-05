@@ -21,5 +21,7 @@ class LogPurchase
         Log::info($message, ['order_id' => $event->order->id]);
         SendTelegramNotificationJob::dispatch($message);
         Artisan::call('serko:record-purchase-metric', ['order' => $event->order->id]);
+        Artisan::call('serko:sync-event-availability');
+        Artisan::call('serko:audit-orders');
     }
 }

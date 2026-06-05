@@ -79,6 +79,14 @@ it('calls the purchase metric command from application code after checkout', fun
         ->shouldReceive('call')
         ->once()
         ->with('serko:record-purchase-metric', Mockery::on(fn (array $arguments) => isset($arguments['order'])))
+        ->andReturn(0)
+        ->shouldReceive('call')
+        ->once()
+        ->with('serko:sync-event-availability')
+        ->andReturn(0)
+        ->shouldReceive('call')
+        ->once()
+        ->with('serko:audit-orders')
         ->andReturn(0);
 
     $this->actingAs($user)->post('/orders', [
