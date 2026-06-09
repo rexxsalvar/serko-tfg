@@ -2,8 +2,7 @@
 
 @section('content')
     @php
-        $image = $event->stadium->image;
-        $imageUrl = $image ? (filter_var($image, FILTER_VALIDATE_URL) ? $image : asset('storage/'.$image)) : 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2069&auto=format&fit=crop';
+        $imageUrl = $event->stadium->imageUrl() ?? asset('images/stadiums/metropolitano.jpg');
         $availableSeats = $event->seats->where('pivot.status', 'available')->count();
         $lowestPrice = $event->seats->where('pivot.status', 'available')->min('pivot.price');
     @endphp

@@ -14,9 +14,14 @@ class EventSeeder extends Seeder
     public function run(): void
     {
         $events = [
-            ['stadium' => 'Santiago Bernabeu', 'competition' => 'LaLiga', 'home' => 'Real Madrid', 'away' => 'FC Barcelona', 'days' => 12, 'hour' => 21],
-            ['stadium' => 'Camp Nou', 'competition' => 'Champions League', 'home' => 'FC Barcelona', 'away' => 'Sevilla FC', 'days' => 19, 'hour' => 20],
-            ['stadium' => 'Metropolitano', 'competition' => 'Copa del Rey', 'home' => 'Atletico de Madrid', 'away' => 'Real Betis', 'days' => 26, 'hour' => 22],
+            ['stadium' => 'Santiago Bernabeu', 'competition' => 'LaLiga', 'home' => 'Real Madrid', 'away' => 'FC Barcelona', 'date' => now()->addHours(18)],
+            ['stadium' => 'Camp Nou', 'competition' => 'Champions League', 'home' => 'FC Barcelona', 'away' => 'Valencia CF', 'date' => now()->addDays(3)->setTime(21, 0)],
+            ['stadium' => 'Metropolitano', 'competition' => 'Europa League', 'home' => 'Atletico de Madrid', 'away' => 'Real Betis', 'date' => now()->addDays(8)->setTime(20, 30)],
+            ['stadium' => 'Metropolitano', 'competition' => 'Copa del Rey', 'home' => 'Sevilla FC', 'away' => 'Real Madrid', 'date' => now()->addDays(15)->setTime(19, 45)],
+            ['stadium' => 'Camp Nou', 'competition' => 'LaLiga', 'home' => 'Valencia CF', 'away' => 'Atletico de Madrid', 'date' => now()->addDays(28)->setTime(22, 0)],
+            ['stadium' => 'Santiago Bernabeu', 'competition' => 'Copa del Rey', 'home' => 'Real Betis', 'away' => 'FC Barcelona', 'date' => now()->addDays(45)->setTime(18, 15)],
+            ['stadium' => 'Santiago Bernabeu', 'competition' => 'Champions League', 'home' => 'Real Madrid', 'away' => 'Sevilla FC', 'date' => now()->addDays(60)->setTime(21, 0)],
+            ['stadium' => 'Camp Nou', 'competition' => 'LaLiga', 'home' => 'FC Barcelona', 'away' => 'Atletico de Madrid', 'date' => now()->addDays(90)->setTime(20, 0)],
         ];
 
         foreach ($events as $eventData) {
@@ -33,7 +38,7 @@ class EventSeeder extends Seeder
                 ],
                 [
                     'competition_id' => $competition->id,
-                    'date' => now()->addDays($eventData['days'])->setTime($eventData['hour'], 0),
+                    'date' => $eventData['date'],
                     'description' => '<p>Partido destacado de la jornada con experiencia SERKO, asientos verificados y entrada QR inmediata.</p>',
                 ],
             );

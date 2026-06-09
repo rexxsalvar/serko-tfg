@@ -46,7 +46,7 @@
                         <a href="{{ route('register') }}" class="serko-button px-4 py-2">{{ __('serko.nav.register') }}</a>
                     @endauth
                     <span class="mx-2 h-6 w-px bg-white/10"></span>
-                    @foreach (['es' => 'ES', 'en' => 'EN', 'ca' => 'CA', 'fr' => 'FR', 'de' => 'DE'] as $locale => $label)
+                    @foreach (['es' => 'ES', 'en' => 'EN'] as $locale => $label)
                         <a href="{{ route('locale.switch', $locale) }}" class="rounded-lg px-2 py-1 text-xs font-black transition {{ app()->getLocale() === $locale ? 'bg-[#fcbf49] text-black' : 'bg-white/5 text-gray-400 hover:text-white' }}">{{ $label }}</a>
                     @endforeach
                 </nav>
@@ -76,7 +76,7 @@
                         <a href="{{ route('register') }}" class="serko-button text-center">{{ __('serko.nav.register') }}</a>
                     @endauth
                     <div class="mt-2 flex flex-wrap gap-2">
-                        @foreach (['es' => 'ES', 'en' => 'EN', 'ca' => 'CA', 'fr' => 'FR', 'de' => 'DE'] as $locale => $label)
+                        @foreach (['es' => 'ES', 'en' => 'EN'] as $locale => $label)
                             <a href="{{ route('locale.switch', $locale) }}" class="rounded-lg px-3 py-2 text-xs font-black transition {{ app()->getLocale() === $locale ? 'bg-[#fcbf49] text-black' : 'bg-white/5 text-gray-400' }}">{{ $label }}</a>
                         @endforeach
                     </div>
@@ -116,7 +116,7 @@
                     <div>
                         <h4 class="mb-4 font-bold text-white">Idioma</h4>
                         <div class="flex flex-wrap gap-2">
-                            @foreach (['es' => 'ES', 'en' => 'EN', 'ca' => 'CA', 'fr' => 'FR', 'de' => 'DE'] as $locale => $label)
+                            @foreach (['es' => 'ES', 'en' => 'EN'] as $locale => $label)
                                 <a href="{{ route('locale.switch', $locale) }}" class="rounded-lg border border-white/10 px-3 py-2 text-xs font-black {{ app()->getLocale() === $locale ? 'bg-[#fcbf49] text-black' : 'text-gray-400 hover:text-white' }}">{{ $label }}</a>
                             @endforeach
                         </div>

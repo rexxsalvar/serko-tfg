@@ -89,8 +89,7 @@
         <div class="grid gap-6 md:grid-cols-3">
             @forelse ($featuredEvents as $event)
                 @php
-                    $image = $event->stadium->image;
-                    $imageUrl = $image ? (filter_var($image, FILTER_VALIDATE_URL) ? $image : asset('storage/'.$image)) : 'https://images.unsplash.com/photo-1522778119026-d647f0565c6a?q=80&w=2070&auto=format&fit=crop';
+                    $imageUrl = $event->stadium->imageUrl() ?? asset('images/stadiums/santiago-bernabeu.jpg');
                 @endphp
                 <a href="{{ route('events.show', $event) }}" class="serko-glow-card reveal-element group flex min-h-[28rem] flex-col overflow-hidden">
                     <div class="relative h-48 overflow-hidden">

@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
             ['name' => 'SERKO Manager', 'email' => 'manager@serko.test', 'role' => 'Manager'],
             ['name' => 'SERKO Support', 'email' => 'support@serko.test', 'role' => 'Support'],
             ['name' => 'SERKO Auditor', 'email' => 'auditor@serko.test', 'role' => 'Auditor'],
+            ['name' => 'SERKO Client', 'email' => 'client@serko.test', 'role' => 'User'],
         ] as $demoUser) {
             $account = User::query()->updateOrCreate(['email' => $demoUser['email']], [
                 'name' => $demoUser['name'],
@@ -43,5 +44,7 @@ class DatabaseSeeder extends Seeder
             ]);
             $account->syncRoles([$demoUser['role']]);
         }
+
+        $this->call(DemoSalesSeeder::class);
     }
 }

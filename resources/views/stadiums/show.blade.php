@@ -2,8 +2,7 @@
 
 @section('content')
     @php
-        $image = $stadium->image;
-        $imageUrl = $image ? (filter_var($image, FILTER_VALIDATE_URL) ? $image : asset('storage/'.$image)) : 'https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?q=80&w=2070&auto=format&fit=crop';
+        $imageUrl = $stadium->imageUrl() ?? asset('images/stadiums/estadio-ville.jpg');
     @endphp
 
     <section class="space-y-8">

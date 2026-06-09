@@ -38,6 +38,23 @@ class Stadium extends Model
         return $this->hasMany(Event::class);
     }
 
+    public function imageUrl(): ?string
+    {
+        if (! $this->image) {
+            return null;
+        }
+
+        if (filter_var($this->image, FILTER_VALIDATE_URL)) {
+            return $this->image;
+        }
+
+        if (str_starts_with($this->image, 'images/')) {
+            return asset($this->image);
+        }
+
+        return asset('storage/'.$this->image);
+    }
+
     public function scopeUpcomingEvents(Builder $query): Builder
     {
         return $query->whereHas('events', fn (Builder $builder) => $builder->upcomingEvents());

@@ -14,7 +14,7 @@ class StadiumResource extends JsonResource
             'name' => $this->name,
             'city' => $this->city,
             'capacity' => $this->capacity,
-            'image_url' => $this->image ? asset('storage/'.$this->image) : null,
+            'image_url' => $this->imageUrl(),
             'events_count' => $this->whenCounted('events'),
             'sectors_count' => $this->whenCounted('sectors'),
             'sectors' => SectorResource::collection($this->whenLoaded('sectors')),

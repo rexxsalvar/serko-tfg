@@ -368,7 +368,10 @@ it('covers multiplied scopes policies and dynamic languages', function (): void 
         ->and($admin->can('update', $purchase['payment']))->toBeTrue()
         ->and($user->can('update', $purchase['payment']))->toBeFalse();
 
-    foreach (['ca' => 'Entrades de futbol', 'fr' => 'Billets de football', 'de' => 'Fussballtickets'] as $locale => $copy) {
+    foreach ([
+        'es' => 'Compra entradas de futbol',
+        'en' => 'Buy football tickets',
+    ] as $locale => $copy) {
         $this->from('/')->get("/locale/{$locale}")->assertRedirect('/');
         $this->get('/')->assertOk()->assertSee($copy);
     }

@@ -23,8 +23,7 @@
         <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             @foreach ($events as $event)
                 @php
-                    $image = $event->stadium->image;
-                    $imageUrl = $image ? (filter_var($image, FILTER_VALIDATE_URL) ? $image : asset('storage/'.$image)) : 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2070&auto=format&fit=crop';
+                    $imageUrl = $event->stadium->imageUrl() ?? asset('images/stadiums/estadio-town.jpg');
                 @endphp
                 <article class="serko-glow-card reveal-element group flex min-h-[29rem] flex-col overflow-hidden">
                     <div class="relative h-52 overflow-hidden">

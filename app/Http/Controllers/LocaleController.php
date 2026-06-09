@@ -6,7 +6,7 @@ use Illuminate\Http\RedirectResponse;
 
 class LocaleController extends Controller
 {
-    public const SUPPORTED = ['es', 'en', 'ca', 'fr', 'de'];
+    public const SUPPORTED = ['es', 'en'];
 
     public function switch(string $locale): RedirectResponse
     {
